@@ -9,7 +9,15 @@ var Estabelecimento = function(id, name, address, location, cnpj){
 	this.location = location;
 }
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.get('/estabelecimentos', function (req, res) {
+	
+	res.append
 
 	let estabelecimentos = [
 		new Estabelecimento(1, "Lanchonete do pedro", "Rua Uruguai - 230", [2, 2], "5454654654"),
